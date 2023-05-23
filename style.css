@@ -1,3 +1,7 @@
+:root{
+    --cells: 10;
+}
+
 nav img{
     width: 60px;
     height: 60px;
@@ -13,39 +17,16 @@ main{
     height: 750px;
 }
 
-.grid-Hard{
-    border: 1px solid #1e3e33;
-    width: 700px;
-    height: 700px;
-}
-
-.grid-Crazy{
-    border: 1px solid #1e3e33;
-    width: 650px;
-    height: 650px;
-}
-
-
-.cell-Normal{
-    width: calc(100% / 10);
-    height: calc(100% / 10);
+.cell{
     border: 1px solid #1e3e33;
     cursor: pointer;
 }
 
-.cell-Hard{
-    width: calc(100% / 9);
-    height: calc(100% / 9);
-    border: 1px solid #1e3e33;
-    cursor: pointer;
+.Normal{
+    width: calc(100% / var(--cells));
+    height: calc(100% / var(--cells));
 }
 
-.cell-Crazy{
-    width: calc(100% / 7);
-    height: calc(100% / 7);
-    border: 1px solid #1e3e33;
-    cursor: pointer;
-}
 
 .toggle{
     background-color: rgba(15, 156, 156, 0.63);

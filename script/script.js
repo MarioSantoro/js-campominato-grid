@@ -2,91 +2,45 @@ const button = document.querySelector("button");
 button.addEventListener("click", function(){
     const mainElement = document.querySelector("main");
     mainElement.innerHTML = "";
+    let len = 0;
 
     const selectElement = document.querySelector("select").value;
+    const root = document.querySelector(":root");
+    const rootStyle = getComputedStyle(root);
 
     if(selectElement === "Normal"){
-        //Normal
-        const newGridElement = createGridNormal();
-        mainElement.appendChild(newGridElement);
-    
-        for(let i=1; i<101;i++){
-            const newCellsElement = createCellsNormal();
-            newCellsElement.innerHTML = i;
-            newCellsElement.addEventListener("click" , function(){
-                newCellsElement.classList.toggle("toggle");
-            })
-            newGridElement.appendChild(newCellsElement);
-        }
-
-
-
-        function createCellsNormal(){
-            const cellElement = document.createElement("div");
-            cellElement.classList.add("cell-Normal" , "d-flex" , "align-items-center" , "justify-content-center" , "fw-semibold");
-            return cellElement;
-        }
-
-        function createGridNormal(){
-            const gridElement = document.createElement("div");
-            gridElement.classList.add("d-flex" , "flex-wrap" , "m-auto" , "grid-Normal");
-            return gridElement;
-        }
-
+        len = 101;
+         root.style.setProperty("--cells" , 10);
     }else if(selectElement === "Hard"){
-        //Hard
-        const newGridElement = createGridHard();
-        mainElement.appendChild(newGridElement);
-        
-        for(let i=1; i<82;i++){
-            const newCellsElement = createCellsHard();
-            newCellsElement.innerHTML = i;
-            newCellsElement.addEventListener("click" , function(){
-                newCellsElement.classList.toggle("toggle");
-            })
-            newGridElement.appendChild(newCellsElement);
-        }
-
-
-
-        function createCellsHard(){
-            const cellElement = document.createElement("div");
-            cellElement.classList.add("cell-Hard" , "d-flex" , "align-items-center" , "justify-content-center" , "fw-semibold");
-            return cellElement;
-        }
-
-        function createGridHard(){
-            const gridElement = document.createElement("div");
-            gridElement.classList.add("d-flex" , "flex-wrap" , "m-auto" , "grid-Hard");
-            return gridElement;
-        }
+        len = 82;
+        root.style.setProperty("--cells" , 9);
     }else if(selectElement === "Crazy"){
-        //Crazy
-        const newGridElement = createGridCrazy();
-        mainElement.appendChild(newGridElement);
-        
-        for(let i=1; i<50;i++){
-            const newCellsElement = createCellsCrazy();
-            newCellsElement.innerHTML = i;
-            newCellsElement.addEventListener("click" , function(){
-                newCellsElement.classList.toggle("toggle");
-            })
-            newGridElement.appendChild(newCellsElement);
-        }
+        len = 50;
+        root.style.setProperty("--cells" , 7);
+    }
 
+    const newGridElement = createGridNormal();
+    mainElement.appendChild(newGridElement);
 
-
-        function createCellsCrazy(){
-            const cellElement = document.createElement("div");
-            cellElement.classList.add("cell-Crazy" , "d-flex" , "align-items-center" , "justify-content-center" , "fw-semibold");
-            return cellElement;
-        }
-
-        function createGridCrazy(){
-            const gridElement = document.createElement("div");
-            gridElement.classList.add("d-flex" , "flex-wrap" , "m-auto" , "grid-Crazy");
-            return gridElement;
-        }
-    }   
+    function createCellsNormal(){
+        const cellElement = document.createElement("div");
+        cellElement.classList.add("cell" , "Normal" , "d-flex" , "align-items-center" , "justify-content-center" , "fw-semibold");
+        return cellElement;
+    }
     
+    function createGridNormal(){
+        const gridElement = document.createElement("div");
+        gridElement.classList.add("d-flex" , "flex-wrap" , "m-auto" , "grid-Normal");
+        return gridElement;
+    }
+    
+    for(let i=1; i<len;i++){
+        const newCellsElement = createCellsNormal();
+        newCellsElement.innerHTML = i;
+        newCellsElement.addEventListener("click" , function(){
+            newCellsElement.classList.toggle("toggle");
+            
+        });
+        newGridElement.appendChild(newCellsElement);
+    }
 })
