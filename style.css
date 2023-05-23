@@ -6,3 +6,15 @@ nav img{
 main{
     background-color: #85e2e1;
 }
+
+.grid{
+    border: 1px solid #1e3e33;
+    width: 750px;
+    height: 750px;
+}
+
+div.cell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid #1e3e33;
+}
