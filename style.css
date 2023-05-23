@@ -7,15 +7,42 @@ main{
     background-color: #7fffd4;
 }
 
-.grid{
+.grid-Normal{
     border: 1px solid #1e3e33;
     width: 750px;
     height: 750px;
 }
 
-div.cell{
+.grid-Hard{
+    border: 1px solid #1e3e33;
+    width: 700px;
+    height: 700px;
+}
+
+.grid-Crazy{
+    border: 1px solid #1e3e33;
+    width: 650px;
+    height: 650px;
+}
+
+
+.cell-Normal{
     width: calc(100% / 10);
     height: calc(100% / 10);
+    border: 1px solid #1e3e33;
+    cursor: pointer;
+}
+
+.cell-Hard{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 1px solid #1e3e33;
+    cursor: pointer;
+}
+
+.cell-Crazy{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
     border: 1px solid #1e3e33;
     cursor: pointer;
 }
