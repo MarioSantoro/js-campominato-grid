@@ -4,7 +4,7 @@ nav img{
 }
 
 main{
-    background-color: #85e2e1;
+    background-color: #7fffd4;
 }
 
 .grid{
@@ -17,4 +17,11 @@ div.cell{
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid #1e3e33;
+    cursor: pointer;
+}
+
+.toggle{
+    background-color: rgba(15, 156, 156, 0.63);
+    color: white;
+    font-weight: bold;
 }
