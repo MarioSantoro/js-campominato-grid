@@ -38,8 +38,8 @@ button.addEventListener("click", function(){
         const newCellsElement = createCellsNormal();
         newCellsElement.innerHTML = i;
         newCellsElement.addEventListener("click" , function(){
-            newCellsElement.classList.toggle("toggle");
-            
+            newCellsElement.classList.toggle("toggle"); 
+            console.log(i);
         });
         newGridElement.appendChild(newCellsElement);
     }
